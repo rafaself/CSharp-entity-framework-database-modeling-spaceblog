@@ -9,3 +9,10 @@ Usuários e Comentários: Relação one-to-many, onde um usuário pode ter muito
 Post e Categorias de Post: Relação many-to-many, onde uma postagem pode pertencer a várias categorias e uma categoria pode ter várias postagens.
 Post e Comentários: Relação one-to-many, onde uma postagem pode ter muitos comentários, mas um comentário só pode pertencer a uma postagem.
 Usuário e Post: Relação one-to-one, onde um usuário pode ter no máximo uma única postagem associada a ele. Este é o modelo que você queria adicionar.
+
+- Atributos das models:
+
+* Post: Id, Title, Description, UserId, PostsCategory (Property Access)
+* PostCategory: Id, Category (Relation to an enumerate class), CategoryTitle, Post (Property Access)
+* User: Id, Name, Email
+* Comment: Id, Text, PostId, UserId
