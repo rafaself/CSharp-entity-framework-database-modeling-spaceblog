@@ -11,7 +11,8 @@ public class PostConfiguration : IEntityTypeConfiguration<Post>
         builder
             .HasOne<User>(post => post.User)
             .WithMany(user => user.Posts)
-            .HasForeignKey(post => post.UserId);
+            .HasForeignKey(post => post.UserId)
+            .OnDelete(DeleteBehavior.Restrict);
 
         builder
             .HasMany<Comment>(post => post.Comments)

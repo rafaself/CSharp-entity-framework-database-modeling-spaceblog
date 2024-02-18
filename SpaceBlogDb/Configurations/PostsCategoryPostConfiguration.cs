@@ -13,11 +13,13 @@ public class PostsCategoryPostConfiguration : IEntityTypeConfiguration<PostsCate
         builder
             .HasOne<Post>(postsCategoryPost => postsCategoryPost.Post)
             .WithMany(post => post.PostsCategoriesPosts)
-            .HasForeignKey(postsCategoryPost => postsCategoryPost.PostId);
+            .HasForeignKey(postsCategoryPost => postsCategoryPost.PostId)
+            .OnDelete(DeleteBehavior.Restrict);
 
         builder
             .HasOne<PostsCategory>(postsCategoryPost => postsCategoryPost.PostsCategory)
             .WithMany(postsCategory => postsCategory.PostsCategoriesPosts)
-            .HasForeignKey(postsCategoryPost => postsCategoryPost.PostsCategoryId);
+            .HasForeignKey(postsCategoryPost => postsCategoryPost.PostsCategoryId)
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }
