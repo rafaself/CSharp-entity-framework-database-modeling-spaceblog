@@ -1,10 +1,14 @@
-﻿using SpaceBlogDb.Repositories;
+﻿using AutoMapper;
+using SpaceBlogDb.Models.DTOs;
+using SpaceBlogDb.Repositories;
 
 namespace SpaceBlogDb.UseCases.User;
 
 public class GetUserById
 {
-    public static async Task Execute()
+
+
+    public static async Task Execute(IMapper mapper)
     {
         await using var dbContext = new CustomDbContext();
 
@@ -18,6 +22,7 @@ public class GetUserById
         try
         {
             var user = await userRepository.GetByIdAsync(id);
+            var userMapped = mapper.Map<UserDto>(user);
             Console.WriteLine($"Nome: {user.Name}");
             Console.WriteLine($"Email: {user.Email}\n");
         }

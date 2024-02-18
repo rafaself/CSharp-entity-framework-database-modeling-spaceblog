@@ -1,9 +1,16 @@
-﻿using SpaceBlogDb.UseCases.User;
+﻿using AutoMapper;
+using Microsoft.Extensions.DependencyInjection;
+using SpaceBlogDb.UseCases.User;
+using System.Reflection;
 
-Console.WriteLine("Menu");
+
+var config = new MapperConfiguration(cfg => cfg.AddMaps(AppDomain.CurrentDomain.GetAssemblies()));
+var mapper = config.CreateMapper();
 
 int option;
 
+
+Console.WriteLine("Menu");
 do
 {
     Console.WriteLine("Opções:");
@@ -22,7 +29,7 @@ do
             await CreateUser.Execute();
             break;
         case 2:
-            await GetUserById.Execute();
+            await GetUserById.Execute(mapper);
             break;        
         case 3:
             await DeleteUser.Execute();
