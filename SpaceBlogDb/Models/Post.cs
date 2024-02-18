@@ -4,7 +4,7 @@ namespace SpaceBlogDb.Models;
 
 public class Post : IBaseModel
 {
-    public int Id { get; }
+    public int Id { get; set; }
     public string Title { get; } = string.Empty;
     public string Description { get; } = string.Empty;
     public int UserId { get; set; }
