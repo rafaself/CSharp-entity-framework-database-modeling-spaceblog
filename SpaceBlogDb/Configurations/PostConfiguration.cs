@@ -21,5 +21,6 @@ public class PostConfiguration : IEntityTypeConfiguration<Post>
         builder
             .HasMany<PostsCategoryPost>(post => post.PostsCategoriesPosts)
             .WithOne(postCategoryPost => postCategoryPost.Post);
+
     }
 }

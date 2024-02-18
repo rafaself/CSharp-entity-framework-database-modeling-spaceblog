@@ -26,7 +26,7 @@ public class CustomDbContext : DbContext
     {
         if (options.IsConfigured) return;
 
-        string connectionString = "Server=localhost;Database=YourDatabaseName;Trusted_Connection=True;TrustServerCertificate=true;";
+        string connectionString = "Server=localhost;Database=TutorialDB;Trusted_Connection=True;TrustServerCertificate=true;";
         options.UseSqlServer(connectionString);
     }
 
