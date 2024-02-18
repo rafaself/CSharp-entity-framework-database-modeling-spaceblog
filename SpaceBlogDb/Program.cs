@@ -2,13 +2,14 @@
 
 Console.WriteLine("Menu");
 
-int option = 0;
+int option;
 
 do
 {
     Console.WriteLine("Opções:");
     Console.WriteLine("1 - Criar usuário");
     Console.WriteLine("2 - Buscar usuário");
+    Console.WriteLine("3 - Deletar usuário");
     Console.WriteLine("0 - Sair");
 
     Console.Write("\nDigite uma opção: ");
@@ -22,6 +23,9 @@ do
             break;
         case 2:
             await GetUserById.Execute();
+            break;        
+        case 3:
+            await DeleteUser.Execute();
             break;
     }
 

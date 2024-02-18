@@ -19,6 +19,7 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
         if (entity == null) throw new InvalidOperationException("Entity can't be null");
 
         _dbContext.Add(entity);
+
     }
 
     public Task<TEntity> GetByIdAsync(int id)
@@ -27,6 +28,14 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
             .AsNoTracking()
             .Where(entity => entity.Id == id)
             .FirstAsync();
+    }
+    public async Task Delete(int id)
+    {
+        var entity = await _dbContext.Set<TEntity>()
+            .Where(entity => entity.Id == id)
+            .FirstAsync();
+
+        _dbContext.Remove(entity);
     }
 
 }
