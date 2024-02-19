@@ -24,11 +24,11 @@ public class GetUserById
             var user = await userRepository.GetByIdAsync(id);
             var userMapped = mapper.Map<UserDto>(user);
             Console.WriteLine($"\nNome: {user.Name}");
-            Console.WriteLine($"Email: {user.Email}\n");
+            Console.WriteLine($"Email: {user.Email}");
         }
         catch (InvalidOperationException)
         {
-            Console.WriteLine("Usuárion não encontrado!\n");
+            Console.WriteLine("Usuárion não encontrado!");
         }
 
     }

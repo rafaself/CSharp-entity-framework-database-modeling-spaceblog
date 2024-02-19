@@ -30,6 +30,14 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
             .FirstAsync();
     }
 
+    public Task<List<TEntity>> ListAllAsync()
+    {
+        return _dbContext.Set<TEntity>()
+            .AsNoTracking()
+            .OrderBy(entity => entity.Id)
+            .ToListAsync();
+    }
+
     public async Task Delete(int id)
     {
         var entity = await _dbContext.Set<TEntity>()
