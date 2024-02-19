@@ -11,6 +11,7 @@ public class CallPostCategoryUseCases
             Console.WriteLine("1 - Criar Categoria de Post");
             Console.WriteLine("2 - Buscar Categoria de Post pelo ID");
             Console.WriteLine("3 - Deletar Categoria de Post");
+            Console.WriteLine("4 - Atualizar Categoria de Post");
             Console.WriteLine("0 - Voltar ao menu anterior");
             Console.Write("\nDigite uma opção: ");
 
@@ -27,6 +28,9 @@ public class CallPostCategoryUseCases
                     break;
                 case 3:
                     await DeletePostCategory.Execute();
+                    break;
+                case 4:
+                    await UpdatePostCategory.Execute();
                     break;
                 case 0:
                     Console.Clear();
