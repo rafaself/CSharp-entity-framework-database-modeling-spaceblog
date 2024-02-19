@@ -17,6 +17,7 @@ do
     Console.WriteLine("1 - Criar usuário");
     Console.WriteLine("2 - Buscar usuário");
     Console.WriteLine("3 - Deletar usuário");
+    Console.WriteLine("4 - Atualizar nome do usuário");
     Console.WriteLine("0 - Sair");
 
     Console.Write("\nDigite uma opção: ");
@@ -33,6 +34,9 @@ do
             break;        
         case 3:
             await DeleteUser.Execute();
+            break;        
+        case 4:
+            await UpdateUserName.Execute();
             break;
     }
 

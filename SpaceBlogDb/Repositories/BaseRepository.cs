@@ -7,7 +7,7 @@ namespace SpaceBlogDb.Repositories;
 public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class, IBaseModel
 {
 
-    readonly CustomDbContext _dbContext;
+    protected readonly CustomDbContext _dbContext;
 
     public BaseRepository(CustomDbContext dbContext)
     {
@@ -29,6 +29,7 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
             .Where(entity => entity.Id == id)
             .FirstAsync();
     }
+
     public async Task Delete(int id)
     {
         var entity = await _dbContext.Set<TEntity>()
