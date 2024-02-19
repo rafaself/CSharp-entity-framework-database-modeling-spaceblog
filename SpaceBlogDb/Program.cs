@@ -14,11 +14,8 @@ Console.WriteLine("Menu");
 do
 {
     Console.WriteLine("Opções:");
-    Console.WriteLine("1 - Criar usuário");
-    Console.WriteLine("2 - Buscar usuário");
-    Console.WriteLine("3 - Deletar usuário");
-    Console.WriteLine("4 - Atualizar nome do usuário");
-    Console.WriteLine("0 - Sair");
+    Console.WriteLine("1 - Seção de usuários");
+    Console.WriteLine("0 - Sair do programa");
 
     Console.Write("\nDigite uma opção: ");
     string optionTemp = Console.ReadLine() ?? throw new ArgumentNullException("Can't be null");
@@ -27,16 +24,7 @@ do
     switch (option)
     {
         case 1:
-            await CreateUser.Execute();
-            break;
-        case 2:
-            await GetUserById.Execute(mapper);
-            break;        
-        case 3:
-            await DeleteUser.Execute();
-            break;        
-        case 4:
-            await UpdateUserName.Execute();
+            await CallUserUseCases.Execute(mapper);
             break;
     }
 
