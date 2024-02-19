@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SpaceBlogDb;
 
@@ -10,9 +11,11 @@ using SpaceBlogDb;
 namespace SpaceBlogDb.Migrations
 {
     [DbContext(typeof(CustomDbContext))]
-    partial class CustomDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240219220138_CanEditTitleAndDescriptionPost")]
+    partial class CanEditTitleAndDescriptionPost
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
