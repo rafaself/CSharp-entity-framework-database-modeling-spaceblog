@@ -24,7 +24,7 @@ public class CreatePostCategory
 
         await dbContext.SaveChangesAsync();
 
-        Console.WriteLine($"Categoria {postCategory} criada com sucesso!");
+        Console.WriteLine($"Categoria {postCategory.Title} criada com sucesso!");
     }
 
 }
