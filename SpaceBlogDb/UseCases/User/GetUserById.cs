@@ -17,13 +17,13 @@ public class GetUserById
         Console.Write("\nDigite o ID do usuário: ");
         string idTemp = Console.ReadLine() ?? throw new ArgumentNullException("Can't be null!");
         int id = int.Parse(idTemp);
-        Console.WriteLine("Buscando usuário...");
+        Console.WriteLine("\nBuscando usuário...");
 
         try
         {
             var user = await userRepository.GetByIdAsync(id);
             var userMapped = mapper.Map<UserDto>(user);
-            Console.WriteLine($"Nome: {user.Name}");
+            Console.WriteLine($"\nNome: {user.Name}");
             Console.WriteLine($"Email: {user.Email}\n");
         }
         catch (InvalidOperationException)

@@ -17,7 +17,7 @@ do
     Console.WriteLine("1 - Seção de usuários");
     Console.WriteLine("0 - Sair do programa");
 
-    Console.Write("\nDigite uma opção: ");
+    Console.Write("Digite uma opção: ");
     string optionTemp = Console.ReadLine() ?? throw new ArgumentNullException("Can't be null");
     option = int.Parse(optionTemp);
 

@@ -14,10 +14,9 @@ public class CallUserUseCases
             Console.WriteLine("3 - Deletar usuário");
             Console.WriteLine("4 - Atualizar nome do usuário");
             Console.WriteLine("0 - Voltar para o menu principal");
-            Console.Write("\nDigite uma opção: ");
+            Console.Write("Digite uma opção: ");
             string optionTemp = Console.ReadLine() ?? throw new ArgumentNullException("Can't be null");
             option = int.Parse(optionTemp);
-
 
             switch (option)
             {
@@ -32,6 +31,9 @@ public class CallUserUseCases
                     break;
                 case 4:
                     await UpdateUserName.Execute();
+                    break;
+                case 0:
+                    Console.Clear();
                     break;
             }
         } while (option > 0);
