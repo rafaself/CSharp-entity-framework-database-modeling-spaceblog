@@ -17,9 +17,7 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
     public void Create(TEntity entity)
     {
         if (entity == null) throw new InvalidOperationException("Entity can't be null");
-
         _dbContext.Add(entity);
-
     }
 
     public Task<TEntity> GetByIdAsync(int id)

@@ -1,4 +1,5 @@
-﻿namespace SpaceBlogDb.Models;
+﻿
+namespace SpaceBlogDb.Models;
 
 public class PostsCategoryPost
 {
