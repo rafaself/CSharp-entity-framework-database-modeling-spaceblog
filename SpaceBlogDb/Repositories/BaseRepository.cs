@@ -28,7 +28,7 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
             .FirstAsync();
     }
 
-    public Task<List<TEntity>> ListAllAsync()
+    public virtual Task<List<TEntity>> ListAllAsync()
     {
         return _dbContext.Set<TEntity>()
             .AsNoTracking()

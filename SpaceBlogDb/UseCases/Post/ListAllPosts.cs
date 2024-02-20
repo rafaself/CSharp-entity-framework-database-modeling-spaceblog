@@ -18,6 +18,7 @@ public class ListAllPosts
             Console.WriteLine($"\n-- Post {post.Id}");
             Console.WriteLine($"Título: {post.Title}");
             Console.WriteLine($"Descrição: {post.Description}");
+            Console.WriteLine($"Usuário Criador: {post.User!.Name}");
             Console.WriteLine($"ID Usuário Criador: {post.UserId}\n");
         }
 
