@@ -20,7 +20,7 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
         _dbContext.Add(entity);
     }
 
-    public Task<TEntity> GetByIdAsync(int id)
+    public virtual Task<TEntity> GetByIdAsync(int id)
     {
         return _dbContext.Set<TEntity>()
             .AsNoTracking()

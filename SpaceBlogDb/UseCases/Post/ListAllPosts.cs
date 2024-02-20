@@ -15,7 +15,7 @@ public class ListAllPosts
 
         foreach(var post in posts)
         {
-            Console.WriteLine($"\n-- Post {post.Id}");
+            Console.WriteLine($"\n-- Post #{post.Id}");
             Console.WriteLine($"Título: {post.Title}");
             Console.WriteLine($"Descrição: {post.Description}");
             Console.WriteLine($"Usuário Criador: {post.User!.Name}");

@@ -12,6 +12,7 @@ public class CallPostUseCases
             Console.WriteLine("-- Gerenciamento dos Posts --\n");
             Console.WriteLine("1 - Criar Post");
             Console.WriteLine("2 - Listar Posts");
+            Console.WriteLine("3 - Buscar Post pelo ID");
             Console.WriteLine("0 - Voltar ao menu anterior");
             Console.Write("\nDigite uma opção: ");
 
@@ -25,6 +26,9 @@ public class CallPostUseCases
                     break;
                 case 2:
                     await ListAllPosts.Execute();
+                    break;
+                case 3:
+                    await GetPostById.Execute();
                     break;
                 case 0:
                     Console.Clear();

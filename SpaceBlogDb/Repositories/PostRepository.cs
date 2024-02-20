@@ -14,4 +14,13 @@ public class PostRepository(CustomDbContext dbContext) : BaseRepository<Post>(db
             .ToListAsync();
     }
 
+    public override Task<Post> GetByIdAsync(int id)
+    {
+        return _dbContext.Set<Post>()
+            .AsNoTracking()
+            .Where(post => post.Id == id)
+            .Include(post => post.User)
+            .FirstAsync();
+    }
+
 }
