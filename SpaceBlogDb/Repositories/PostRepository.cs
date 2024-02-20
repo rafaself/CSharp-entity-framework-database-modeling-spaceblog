@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SpaceBlogDb.Models;
+using System.Reflection;
 
 namespace SpaceBlogDb.Repositories;
 
@@ -21,6 +22,16 @@ public class PostRepository(CustomDbContext dbContext) : BaseRepository<Post>(db
             .Where(post => post.Id == id)
             .Include(post => post.User)
             .FirstAsync();
+    }
+
+    public async Task UpdatePostAsync(int id, string title, string description)
+    {
+        var post = await _dbContext.Set<Post>()
+            .Where(post => post.Id == id)
+            .FirstAsync();
+
+        post.Title = title;
+        post.Description = description;
     }
 
 }
