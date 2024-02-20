@@ -12,6 +12,7 @@ public class CallCommentUseCases
             Console.WriteLine("2 - Buscar comentário pelo ID");
             Console.WriteLine("3 - Listar todos os comentários");
             Console.WriteLine("4 - Deletar comentário");
+            Console.WriteLine("5 - Atualizar comentário");
             Console.WriteLine("0 - Voltar ao menu principal");
             Console.Write("Digite uma opção: ");
             string? optionTemp = Console.ReadLine();
@@ -30,6 +31,9 @@ public class CallCommentUseCases
                     break;
                 case 4:
                     await DeleteComment.Execute();
+                    break;
+                case 5:
+                    await UpdateComment.Execute();
                     break;
                 case 0:
                     Console.Clear();
