@@ -11,7 +11,7 @@ public class DeleteUser
 
         var userRepository = new UserRepository(dbContext);
 
-        Console.Write("Digite o Id do usuário: ");
+        Console.Write("Digite o ID do usuário: ");
         string idTemp = Console.ReadLine() ?? throw new ArgumentNullException("Can't be null!");
         int id = int.Parse(idTemp);
 
